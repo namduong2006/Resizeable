@@ -51,11 +51,8 @@ namespace interface_IComparable
                     + base.ToString();
         }
         public void Resize(double percent)
-        {
-           
-            Random random = new Random();
-            percent=random.NextDouble();
-            radius *= (percent + 1);
+        {                
+            radius *= percent;
         }
     }
     
