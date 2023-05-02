@@ -85,16 +85,58 @@ namespace interface_IComparable
             //////////////////////////////
             ///
             
-            Console.WriteLine("HCN");
-            Rectangle rectangle = new Rectangle(4, 6);
-            Console.WriteLine(rectangle.getArea());
-            rectangle.Resize(rectangle.getArea());
-            Console.WriteLine(rectangle.getArea());
-            Console.WriteLine("TRON");
-            Circle circle = new Circle(4.5);
-            Console.WriteLine(circle.getArea());
-            circle.Resize(circle.getArea());
-            Console.WriteLine(circle.getArea());
+            double t,n;           
+            Random random = new Random();
+            n = random.NextDouble();
+            t = n+1;
+            Console.WriteLine($"TANG KICH THUOC {n*100}%");
+            Console.WriteLine("RECTANGLE");
+            Rectangle rectangle = new Rectangle();            
+            rectangle.Resize(n);            
+            Rectangle[] rectangles = new Rectangle[3];
+            rectangles[0] = new Rectangle(4, 6);
+            rectangles[1]=new Rectangle(8,5 );
+            rectangles[2]=new Rectangle(9,6);
+            Console.WriteLine("AREA-Pre");
+            Console.WriteLine("======================================");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(rectangles[i]);                
+                Console.Write("AREA:");
+                Console.WriteLine(rectangles[i].getArea());
+                rectangles[i].Resize(t);
+            }
+            Console.WriteLine("=========================");
+            Console.WriteLine("AREA-After");
+            Console.WriteLine("===========================================");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(rectangles[i]);
+                Console.Write("AREA:");
+                Console.WriteLine(rectangles[i].getArea());                
+            }
+            Console.WriteLine("============================ \n CIRCLES");
+            Circle circle = new Circle();
+            Circle[] circles = new Circle[3];
+            circles[0] = new Circle(11.2);
+            circles[1] = new Circle(7.9);
+            circles[2] = new Circle(3.5);
+
+            Console.WriteLine("Pre-sorted:");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(circles[i]);
+                Console.Write("AREA : ");
+                Console.WriteLine(circles[i].getArea());               
+                circles[i].Resize(t);
+            }
+            Console.WriteLine("After-sorted:");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(circles[i]);
+                Console.Write("AREA : ");
+                Console.WriteLine(circles[i].getArea());                
+            }
             Console.ReadLine();
         }
         
