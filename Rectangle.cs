@@ -67,12 +67,9 @@ namespace interface_IComparable
                     + base.ToString();
         }
         public void Resize(double percent)
-        {
-            
-            Random random = new Random();
-            percent=random.NextDouble();
-            width = width * (percent+1);
-            length= length* (percent + 1);    
+        {                        
+            width *= percent;
+            length*=percent;    
         }
 
         //internal bool Resize()
